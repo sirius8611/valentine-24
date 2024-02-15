@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <audio controls autoplay hidden>
-        <source src="love.mp3" type="audio/mp3">
-      </audio>
+    <audio id="happy-audio" loop src="love.mp3" type="audio/mp3"></audio>
     <div class="wrap">
             <div class="container">
-                <div class="neon">Happy Valentine </div>
+                <div class="neon" id="happy">Happy Valentine </div>
                 <i class="neon fa-solid fa-caret-down"></i>
             </div>
             </div>
@@ -45,5 +43,14 @@
             <img src="thuna.jpg">
 
             </div>
-</body>
-</html>
+            <script>
+                let btn = document.getElementById("happy")
+                console.log(btn.textContent)
+                let audio = document.getElementById("happy-audio")
+                btn.addEventListener("click", () => {
+                    if(audio.paused){
+                        audio.play()}     
+                    else audio.pause()})
+            </script>
+    </body >
+</html >
